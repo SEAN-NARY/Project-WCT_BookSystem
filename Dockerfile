@@ -10,7 +10,11 @@ RUN apt-get update && apt-get install -y \
 RUN a2enmod rewrite
 
 # Set working directory
+# WORKDIR /var/www/html
+COPY . /var/www/html
 WORKDIR /var/www/html
+RUN mv public public_html
+
 
 # Copy Laravel files
 COPY . .
