@@ -1,0 +1,464 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+}
+/* container width */
+.container_width {
+    max-width: 1800px;
+    margin: 0 auto;
+}
+/* Navbar */
+header {
+    background-color: #f8d1d2;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation .navbar {
+    display: block;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    gap: 0.1rem;
+    text-decoration: none;
+    color: white;
+}
+
+.logo img {
+    height: 80px;
+    width: 80px;
+}
+
+.logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.logo a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar a {
+    color: white;
+    margin-left: 15px;
+    font-size: 1.2rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #ffd54f;
+}
+
+.navigation .btn-signup {
+    text-align: center;
+    background-color: white;
+    padding: 0.5rem 2rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-signup a {
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: #f8d1d2;
+}
+
+/* Search and Category Buttons Container */
+.search-buttons-container {
+    max-width: 1200px;
+    margin: 30px auto 50px;
+    padding: 0 20px;
+}
+
+.search-bar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 0;
+    flex-wrap: wrap; /* Add wrap for mobile */
+}
+
+.search-bar input[type="text"] {
+    width: 300px;
+    padding: 12px 15px;
+    border: 2px solid #f8d1d2;
+    border-right: none;
+    border-radius: 6px 0 0 6px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    flex: 1 1 auto;
+    min-width: 200px;
+}
+
+.search-bar input[type="text"]:focus {
+    border-color: #ffdd59;
+}
+
+.search-bar .search-btn {
+    padding: 12px 25px;
+    background-color: #f8d1d2;
+    border: 2px solid #f8d1d2;
+    border-left: none;
+    border-radius: 0 6px 6px 0;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.search-bar .search-btn:hover {
+    background-color: #ffdd59;
+    border-color: #ffdd59;
+    color: #333;
+}
+/* Responsive fix for search bar on mobile */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .search-bar input[type="text"] {
+        border-radius: 6px 6px 0 0 !important;
+        border-right: 2px solid #f8d1d2 !important;
+        width: 100% !important;
+    }
+    .search-bar .search-btn {
+        border-radius: 0 0 6px 6px !important;
+        border-left: 2px solid #f8d1d2 !important;
+        border-top: none !important;
+        width: 100% !important;
+    }
+}
+
+/* Category Buttons */
+.category-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.cat-btn {
+    background-color: #e0e7ff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 25px;
+    cursor: pointer;
+    color: #f8d1d2;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+    background-color: #f8d1d2;
+    color: white;
+}
+
+/* Book Section */
+.book-section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+/* Each Category Block */
+.category-block {
+    margin-bottom: 60px;
+}
+
+.category-title {
+    font-size: 28px;
+    color: #f8d1d2;
+    margin-bottom: 25px;
+    border-bottom: 3px solid #f8d1d2;
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+
+/* Book grid */
+.book-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+/* Book card */
+.book-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(30, 144, 255, 0.1);
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover {
+    transform: translateY(-6px);
+}
+
+.book-card img {
+    width: 160px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #f8d1d2;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.book-detail {
+    font-size: 14px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 15px;
+    min-height: 40px;
+}
+
+/* Details button */
+.details-btn {
+    padding: 10px 22px;
+    background-color: #ffdd59;
+    border: none;
+    border-radius: 25px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+}
+
+.details-btn:hover {
+    background-color: #e6c946;
+}
+
+/* Footer */
+.footer {
+    background-color: #f8d1d2;
+    color: white;
+    padding: 40px 20px 20px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+    flex: 1 1 250px;
+}
+
+.footer-about h3,
+.footer-links h4,
+.footer-social h4 {
+    margin-bottom: 15px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.footer-about p {
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 12px;
+}
+
+.footer-links ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #ffdd59;
+}
+
+.footer-social .social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.footer-social .social-icons img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    filter: brightness(0) invert(1);
+    transition: filter 0.3s ease;
+}
+
+.footer-social .social-icons img:hover {
+    filter: brightness(0) invert(0.6);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+    /* Reduce gap in navigation and allow wrapping */
+    .navigation {
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+    /* Navbar links wrap nicely */
+    .navbar {
+        width: 100%;
+        text-align: center;
+        margin-top: 1rem;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+    }
+    /* Reduce hero banner height */
+    .hero-banner {
+        height: 70rem;
+    }
+    /* Card container columns */
+    .card-container {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    }
+    /* About section stacks vertically */
+    .about-content {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+    .about-text,
+    .about-image {
+        flex: 1 1 100%;
+    }
+    /* Footer stacks vertically */
+    .footer-container {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    html {
+        font-size: 56.25%; /* 9px base font */
+    }
+    /* Navigation stacking and spacing */
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    /* Navbar links stacked for mobiles */
+    .navbar {
+        flex-direction: column;
+        gap: 1rem;
+        margin-top: 0.5rem;
+        width: 100%;
+    }
+    /* Shrink logo a bit */
+    .logo img {
+        height: 60px;
+        width: 60px;
+    }
+    .logo span {
+        font-size: 1.3rem;
+    }
+    /* Hero banner height smaller */
+    .hero-banner {
+        height: 50rem;
+    }
+    /* Cards display one per row */
+    .card-container {
+        grid-template-columns: 1fr;
+        padding: 0 0.5rem;
+    }
+    .card img {
+        height: 150px;
+    }
+    /* About text smaller */
+    .about-text h2 {
+        font-size: 2rem;
+    }
+    .about-text p {
+        font-size: 1rem;
+    }
+    /* Contact section responsive */
+    .contact-container {
+        max-width: 100%;
+        padding: 0 1rem;
+    }
+    .profile img {
+        width: 100px;
+        height: 100px;
+    }
+    /* Footer smaller and stacked */
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .footer-social .social-icons {
+        justify-content: center;
+    }
+    .footer-social .social-icons a {
+        margin: 0 0.5rem;
+    }
+    .footer-links ul li {
+        margin-bottom: 0.8rem;
+    }
+    /* Buttons (like signup) full width */
+    .navigation .btn-signup {
+        width: 100%;
+        max-width: 200px;
+        margin-top: 1rem;
+    }
+}
